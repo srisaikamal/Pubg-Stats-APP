@@ -40,7 +40,6 @@ const Home = () => {
     e.preventDefault();
 
     SearchPlayer(playername);
-    console.log(process.env.REACT_APP_API);
   };
 
   return (
