@@ -1,4 +1,4 @@
-import { SEARCH_PLAYER, GET_LIFETIME_DATA, SET_LOADING } from "./Types";
+import { SEARCH_PLAYER, SET_LOADING } from "./Types";
 
 export default (state, action) => {
   switch (action.type) {

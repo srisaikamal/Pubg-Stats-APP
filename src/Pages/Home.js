@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import NavBar from "../Components/NavBar";
 import { TextField, Button, CircularProgress } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
-import axios from "axios";
 import PubgContext from "../Context/PubgContext";
 const useStyles = makeStyles({
   h1: {

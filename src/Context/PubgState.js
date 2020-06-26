@@ -3,12 +3,9 @@ import axios from "axios";
 import PubgContext from "./PubgContext";
 
 import PubgReducer from "./PubgReducer";
-import { SEARCH_PLAYER, GET_LIFETIME_DATA, SET_LOADING } from "./Types";
+import { SEARCH_PLAYER, SET_LOADING } from "./Types";
 
 const PubgState = (props) => {
-  // const API =
-  //   "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJhYWUzYTBiMC05OTljLTAxMzgtMjA2Yy0wMDNlYmUzZjc1OTkiLCJpc3MiOiJnYW1lbG9ja2VyIiwiaWF0IjoxNTkzMTQ5Njg1LCJwdWIiOiJibHVlaG9sZSIsInRpdGxlIjoicHViZyIsImFwcCI6InNyaXNhaWthbWFsMjAwIn0.kjsXOwLe6br41wNvDttkKNxpaV8yT5UUu_a9pnEi1Tc";
-
   const options = {
     headers: {
       Authorization: "Bearer " + process.env.REACT_APP_API,
