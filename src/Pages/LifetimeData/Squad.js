@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CircularProgress, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import PubgContext from "../../Context/PubgContext";
 import DataCard from "../../Components/DataCard";
 
@@ -9,13 +9,9 @@ const Squad = () => {
   const { lifetimeData } = pubgContext;
 
   if (lifetimeData === null) {
-    return <CircularProgress />;
+    return <h1>No Data Yet</h1>;
   } else {
     return (
-      // <Typography>
-      //   {lifetimeData.attributes.gameModeStats.squad.boosts}
-      // </Typography>
-
       <Grid container justify="center" spacing={3}>
         <Grid item xs={12} sm={12} md={6} lg={4}>
           <DataCard

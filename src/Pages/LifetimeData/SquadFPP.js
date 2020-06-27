@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { CircularProgress, Grid } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import DataCard from "../../Components/DataCard";
 
 import PubgContext from "../../Context/PubgContext";
@@ -10,7 +10,7 @@ const SquadFPP = () => {
   return (
     <>
       {lifetimeData === null ? (
-        <CircularProgress />
+        <h1>No Data Yet</h1>
       ) : (
         <Grid container justify="center" spacing={3}>
           <Grid item xs={12} sm={12} md={6} lg={4}>
