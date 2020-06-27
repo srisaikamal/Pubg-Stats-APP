@@ -13,8 +13,7 @@ const PubgState = (props) => {
     },
   };
   const initialState = {
-    playername: "",
-    lifetimeData: {},
+    lifetimeData: null,
     loading: false,
   };
 
@@ -39,6 +38,7 @@ const PubgState = (props) => {
         `https://api.pubg.com/shards/steam/players/${sliced}/seasons/lifetime`,
         options
       );
+      console.log(data);
       dispatch({
         type: SEARCH_PLAYER,
         payload: data,
@@ -55,7 +55,6 @@ const PubgState = (props) => {
   return (
     <PubgContext.Provider
       value={{
-        playername: state.playername,
         lifetimeData: state.lifetimeData,
         loading: state.loading,
         SearchPlayer,

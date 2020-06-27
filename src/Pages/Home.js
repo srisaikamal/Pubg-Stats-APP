@@ -3,6 +3,7 @@ import NavBar from "../Components/NavBar";
 import { TextField, Button, CircularProgress } from "@material-ui/core/";
 import { makeStyles } from "@material-ui/core/styles";
 import PubgContext from "../Context/PubgContext";
+import TabsData from "../Components/TabsData";
 const useStyles = makeStyles({
   h1: {
     marginTop: "6rem",
@@ -46,11 +47,13 @@ const Home = () => {
     <>
       <NavBar />
       <h1 className={classes.h1}>Search for Pubg player data</h1>
+
       <form onSubmit={onSubmit}>
         <div className={classes.formgroup}>
           <label className={classes.labels} htmlFor="playername">
             Player Name:
           </label>
+
           <TextField
             className={classes.playernameinput}
             id="outlined-basic"
@@ -72,13 +75,14 @@ const Home = () => {
           </Button>
         </div>
       </form>
-      {loading ? (
+      {!loading ? (
         <center>
-          <CircularProgress className={classes.loading} />
+          <h1>Stats for {playername}</h1>
+          <TabsData />
         </center>
       ) : (
         <center>
-          <h1>Stats for {playername}</h1>
+          <CircularProgress className={classes.loading} />
         </center>
       )}
     </>
