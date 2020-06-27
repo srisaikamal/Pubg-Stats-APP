@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Typography, CircularProgress, Grid } from "@material-ui/core";
+import { CircularProgress, Grid } from "@material-ui/core";
 import PubgContext from "../../Context/PubgContext";
 import DataCard from "../../Components/DataCard";
 

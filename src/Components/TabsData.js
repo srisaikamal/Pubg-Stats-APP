@@ -47,8 +47,8 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     width: "70%",
     backgroundColor: theme.palette.background.paper,
+    // eslint-disable-next-line
     ["@media (max-width:760px)"]: {
-      // eslint-disable-line no-useless-computed-key
       width: "90%",
     },
   },
