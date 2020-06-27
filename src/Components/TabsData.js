@@ -47,6 +47,10 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     width: "70%",
     backgroundColor: theme.palette.background.paper,
+    ["@media (max-width:760px)"]: {
+      // eslint-disable-line no-useless-computed-key
+      width: "90%",
+    },
   },
 }));
 
@@ -82,7 +86,6 @@ const TabsData = () => {
         <Data1 />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {/*eslint-disable-next-line*/}
         <Data2 />
       </TabPanel>
       <TabPanel value={value} index={2}>
