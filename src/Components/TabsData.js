@@ -6,8 +6,12 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
-import Data1 from "../Pages/LifetimeData/Squad";
-import Data2 from "../Pages/LifetimeData/SquadFPP";
+import Squad from "../Pages/LifetimeData/Squad";
+import SquadFPP from "../Pages/LifetimeData/SquadFPP";
+import Solo from "../Pages/LifetimeData/Solo";
+import SoloFPP from "../Pages/LifetimeData/SoloFPP";
+import Duo from "../Pages/LifetimeData/Duo";
+import DuoFPP from "../Pages/LifetimeData/DuoFPP";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -77,28 +81,28 @@ const TabsData = () => {
           <Tab label="Squad" {...a11yProps(0)} />
           <Tab label="Squad FPP" {...a11yProps(1)} />
           <Tab label="Duo" {...a11yProps(2)} />
-          <Tab label="Duo" {...a11yProps(3)} />
+          <Tab label="Duo FPP" {...a11yProps(3)} />
           <Tab label="Solo" {...a11yProps(4)} />
           <Tab label="Solo FPP" {...a11yProps(5)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
-        <Data1 />
+        <Squad />
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Data2 />
+        <SquadFPP />
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Duo
+        <Duo />
       </TabPanel>
       <TabPanel value={value} index={3}>
-        Duo
+        <DuoFPP />
       </TabPanel>
       <TabPanel value={value} index={4}>
-        Solo
+        <Solo />
       </TabPanel>
       <TabPanel value={value} index={5}>
-        Solo FPP
+        <SoloFPP />
       </TabPanel>
     </div>
   );
