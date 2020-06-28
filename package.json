@@ -36,6 +36,7 @@
     ]
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "react-snap": "^1.23.0"
   }
 }
