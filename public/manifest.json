@@ -3,8 +3,9 @@
   "name": "PUBG Lifetime Stats Finder",
   "icons": [
     {
-      "src": "pubg.png",
-      "type": "image/png"
+      "src": "/Images/logo.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
