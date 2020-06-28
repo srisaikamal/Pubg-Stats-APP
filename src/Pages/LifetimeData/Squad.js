@@ -7,9 +7,8 @@ const Squad = () => {
   const pubgContext = useContext(PubgContext);
 
   const { lifetimeData } = pubgContext;
-
   if (lifetimeData === null) {
-    return <h1>No Data Yet</h1>;
+    return <h1>No Data available </h1>;
   } else {
     return (
       <Grid container justify="center" spacing={3}>

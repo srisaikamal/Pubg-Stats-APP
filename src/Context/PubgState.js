@@ -3,7 +3,7 @@ import axios from "axios";
 import PubgContext from "./PubgContext";
 
 import PubgReducer from "./PubgReducer";
-import { SEARCH_PLAYER, SET_LOADING } from "./Types";
+import { SEARCH_PLAYER, SET_LOADING, ERRORS } from "./Types";
 
 const PubgState = (props) => {
   const options = {
@@ -15,6 +15,7 @@ const PubgState = (props) => {
   const initialState = {
     lifetimeData: null,
     loading: false,
+    error: null,
   };
 
   const [state, dispatch] = useReducer(PubgReducer, initialState);
@@ -23,25 +24,32 @@ const PubgState = (props) => {
 
   const SearchPlayer = async (playername) => {
     setLoading();
-    const {
-      data: { data },
-    } = await axios.get(
-      `https://api.playbattlegrounds.com/shards/steam/players?filter[playerNames]=${playername}`,
-      options
-    );
-    let sliceid = data[0].id;
-    let sliced = sliceid.slice(8);
-    if (sliced) {
+
+    try {
       const {
         data: { data },
       } = await axios.get(
-        `https://api.pubg.com/shards/steam/players/${sliced}/seasons/lifetime`,
+        `https://api.playbattlegrounds.com/shards/steam/players?filter[playerNames]=${playername}`,
         options
       );
-      console.log(data);
+      let sliceid = data[0].id;
+      let sliced = sliceid.slice(8);
+      if (sliced) {
+        const {
+          data: { data },
+        } = await axios.get(
+          `https://api.pubg.com/shards/steam/players/${sliced}/seasons/lifetime`,
+          options
+        );
+        dispatch({
+          type: SEARCH_PLAYER,
+          payload: data,
+        });
+      }
+    } catch (error) {
       dispatch({
-        type: SEARCH_PLAYER,
-        payload: data,
+        type: ERRORS,
+        payload: error.response.status,
       });
     }
   };
@@ -57,6 +65,7 @@ const PubgState = (props) => {
       value={{
         lifetimeData: state.lifetimeData,
         loading: state.loading,
+        error: state.error,
         SearchPlayer,
       }}
     >

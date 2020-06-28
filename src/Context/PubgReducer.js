@@ -1,4 +1,4 @@
-import { SEARCH_PLAYER, SET_LOADING } from "./Types";
+import { SEARCH_PLAYER, SET_LOADING, ERRORS } from "./Types";
 
 export default (state, action) => {
   switch (action.type) {
@@ -15,6 +15,12 @@ export default (state, action) => {
         loading: true,
       };
     }
+    case ERRORS:
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
+      };
     default:
       return state;
   }

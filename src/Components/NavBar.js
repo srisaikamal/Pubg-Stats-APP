@@ -8,7 +8,7 @@ const useStyles = makeStyles({
   },
   logo: {
     margin: "0 auto",
-    fontSize: "2.5rem",
+    fontSize: "2.2rem",
     fontWeight: "700",
   },
 });
@@ -18,7 +18,7 @@ const NavBar = () => {
     <AppBar>
       <Toolbar className={classes.navbar}>
         <Typography variant="h2" className={classes.logo}>
-          PUBG STATS
+          PUBG STATS FINDER
         </Typography>
       </Toolbar>
     </AppBar>
